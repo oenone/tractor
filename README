@@ -1,0 +1,9 @@
+This project was originally written in C++ for Win32, using the WinAPI as
+graphical interface. The Task was to draw a simulated scene consisting of
+a tractor and a dynamic count of wagons behind it. The tractor should
+drive on an ellipse, pulling the wagons. You should have the ability to
+manipulate the scene by setting internal variables, like the radi of the
+ellipse, the speed, etc. While the simulation is in progress, you should
+be able to add or remove wagons by pressing a key, and zoom in or out.
+
+I thought this would be a nice project to reimplement in Ada using Lumen.
