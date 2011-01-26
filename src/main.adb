@@ -36,8 +36,6 @@ procedure Main is
    -- Wheel_Y_Rotation : constant Float := 0.1;
    Object : Drawables.Composites.Mobiles.Tractors.Tractor;
 
-   Program_Exit : exception;
-
    procedure Draw is
       use GL;
    begin
@@ -86,8 +84,9 @@ procedure Main is
 
    -- simply exit this program
    procedure Quit_Handler (Event : Lumen.Events.Event_Data) is
+      pragma Unreferenced (Event);
    begin
-      raise Program_Exit;
+      Lumen.Events.End_Events (The_Window);
    end Quit_Handler;
 
    -- Resize and Initialize the GL window
@@ -127,8 +126,7 @@ begin
    Lumen.Window.Create (Win => The_Window, Name   => "Tractor",
                         Width  => 500,
                         Height => 500,
-                        Events => (Lumen.Window.Want_Key_Press => True,
-                                   Lumen.Window.Want_Exposure  => True,
+                        Events => (Lumen.Window.Want_Exposure  => True,
                                    others                      => False));
 
    Object  :=
@@ -153,8 +151,4 @@ begin
                 Lumen.Events.Close_Window  =>
                   Quit_Handler'Unrestricted_Access,
                 others                     => Lumen.Events.No_Callback));
-
-exception
-   when Program_Exit =>
-      null; -- normal termination
 end Main;
