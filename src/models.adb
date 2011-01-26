@@ -64,6 +64,15 @@ package body Models is
       return From.Point_List.Element (Index => ID);
    end Get_Point;
 
+   procedure Set_Point
+     (Object : in out Model;
+      ID     : Positive;
+      Point  : Points.Point)
+   is
+   begin
+      Object.Point_List.Replace_Element (ID, Point);
+   end Set_Point;
+
    procedure Transform
      (Object : in out Model;
       T      : Transformations.Transformation)

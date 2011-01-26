@@ -9,6 +9,7 @@ package Drawables.Composites.Mobiles.Tractors is
                                        Alpha  : Float;
                                        Direction : Points.Direction);
    overriding procedure Reset (Object : in out Tractor);
+   function Get_Wheelbase (Object : Tractor) return Float;
 private
    type Tractor is new Mobile with record
       Wheelbase      : Float := 1.0;

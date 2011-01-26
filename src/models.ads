@@ -9,6 +9,10 @@ package Models is
       P  : Points.Point;
       ID : out Positive);
    function Get_Point (From : Model; ID : Positive) return Points.Point;
+   procedure Set_Point
+     (Object : in out Model;
+      ID     : Positive;
+      Point  : Points.Point);
    function Count_Points (From : Model) return Natural;
    procedure Add_Edge (Object : in out Model; From, To : Positive);
    function Get_Edge (From : Model; ID : Positive) return Edges.Edge;

@@ -143,6 +143,11 @@ package body Drawables.Composites.Mobiles.Tractors is
       end Create;
    end Factory;
 
+   function Get_Wheelbase (Object : Tractor) return Float is
+   begin
+      return Object.Wheelbase;
+   end Get_Wheelbase;
+
    overriding procedure Reset (Object : in out Tractor) is
       procedure Reset_Axis_And_Axle (Axle : in out Drawable'Class);
       procedure Reset_Steering_Wheel (Wheel : in out Drawable'Class);

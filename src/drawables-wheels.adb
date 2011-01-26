@@ -29,7 +29,7 @@ package body Drawables.Wheels is
    end Get_Width;
 
    procedure Recalculate (Object : in out Wheel) is
-      X : Float := Object.Width / 2.0;
+      X : constant Float := Object.Width / 2.0;
       P : Points.Point;
       R : Transformations.Transformation;
    begin
