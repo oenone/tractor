@@ -1,0 +1,31 @@
+with "../../gnat-2010/lib/gnat/ahven.gpr";
+
+project Ahven_Tests is
+
+   for Source_Dirs use ("tests", "src");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
+   for Main use ("tester.adb");
+
+   package Builder is
+      for Default_Switches ("ada") use ("-s", "-g");
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnatVa", "-gnatwa", "-gnatQ", "-gnato", "-fstack-check", "-gnat05", "-g", "-gnatyaAbBcdefhiIklnoOprsStux", "-ftest-coverage", "-fprofile-arcs");
+   end Compiler;
+
+   package Binder is
+      for Default_Switches ("ada") use ("-E");
+   end Binder;
+
+   package Pretty_Printer is
+      for Default_Switches ("ada") use ("-N", "--no-separate-is", "--no-separate-loop-then", "--use-on-new-line", "--separate-stmt-name");
+   end Pretty_Printer;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-g", "-fprofile-arcs");
+   end Linker;
+
+end Ahven_Tests;
+

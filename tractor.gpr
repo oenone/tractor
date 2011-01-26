@@ -1,0 +1,31 @@
+with "../lumen/lumen.gpr";
+
+project Tractor is
+
+   for Object_Dir use "obj";
+   for Source_Dirs use ("src", "../oglada-0.3");
+   for Exec_Dir use "bin";
+   for Main use ("main.adb");
+
+   package Builder is
+      for Default_Switches ("ada") use ("-g", "-s");
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnatVa", "-gnatwal", "-g", "-gnatQ", "-fstack-check", "-gnato", "-gnat05", "-gnatyAabBdefhiIklnoOprsStuxm");
+   end Compiler;
+
+   package Binder is
+      for Default_Switches ("ada") use ("-E");
+   end Binder;
+
+   package Pretty_Printer is
+      for Default_Switches ("ada") use ("--use-on-new-line", "--no-separate-loop-then", "--no-separate-is");
+   end Pretty_Printer;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-lGLU", "-g");
+   end Linker;
+
+end Tractor;
+
