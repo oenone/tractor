@@ -28,5 +28,9 @@ project Tractor is
       for Default_Switches ("ada") use ("-lGLU", "-g");
    end Linker;
 
+   package Ide is
+      for Vcs_Kind use "Git";
+   end Ide;
+
 end Tractor;
 
