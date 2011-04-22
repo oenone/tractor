@@ -1,5 +1,5 @@
-with "../lumen/lumen.gpr";
-with "opengl.gpr";
+with "lumen.gpr";
+with "oglada.gpr";
 
 project Tractor is
 
@@ -25,7 +25,7 @@ project Tractor is
    end Pretty_Printer;
 
    package Linker is
-      for Default_Switches ("ada") use ("-lGLU", "-g");
+      for Default_Switches ("ada") use ("-g");
    end Linker;
 
    package Ide is
